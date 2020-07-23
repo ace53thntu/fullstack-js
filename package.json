@@ -1,0 +1,36 @@
+{
+  "name": "fullstack-js",
+  "private": true,
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "git-cz": "^4.7.0",
+    "husky": "^4.2.5",
+    "lerna": "^3.22.1",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**"
+    ]
+  },
+  "version": "1.0.0",
+  "description": "Full stack React project",
+  "repository": "https://github.com/ace53thntu/fullstack-js.git",
+  "author": "Em Dinh",
+  "license": "MIT",
+  "scripts": {
+    "clean": "lerna clean --yes && rimraf node_modules",
+    "dev:admin": "lerna --scope=admin run start"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  }
+}
