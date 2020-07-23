@@ -1,15 +1,5 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
-import 'react-native-gesture-handler';
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {
   SafeAreaView,
   StyleSheet,
@@ -17,6 +7,7 @@ import {
   View,
   Text,
   StatusBar,
+  TouchableOpacity,
 } from 'react-native';
 
 import {
@@ -29,7 +20,10 @@ import {
 
 declare const global: {HermesInternal: null | {}};
 
-const App = () => {
+export const WelcomeScreen: React.FC = () => {
+  const navigation = useNavigation();
+  const nextScreen = () => navigation.navigate('demo');
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -46,8 +40,11 @@ const App = () => {
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>
+              <TouchableOpacity onPress={nextScreen}>
+                <Text>Next Screen</Text>
+              </TouchableOpacity>
               <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.tsx</Text> to change
+                Edit 123 <Text style={styles.highlight}>App.tsx</Text> to change
                 this screen and then come back to see your edits.
               </Text>
             </View>
@@ -115,5 +112,3 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 });
-
-export default App;

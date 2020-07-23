@@ -15,8 +15,10 @@
       "packages/*"
     ],
     "nohoist": [
-      "**/react-native",
-      "**/react-native/**"
+      "**/mobile",
+      "**/mobile/**",
+      "mobile",
+      "mobile/**"
     ]
   },
   "version": "1.0.0",
