@@ -18,6 +18,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import {Typography} from '../../components';
+
 declare const global: {HermesInternal: null | {}};
 
 export const WelcomeScreen: React.FC = () => {
@@ -41,12 +43,12 @@ export const WelcomeScreen: React.FC = () => {
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>
               <TouchableOpacity onPress={nextScreen}>
-                <Text>Next Screen</Text>
+                <Typography variant="linkNormal">Next Screen</Typography>
               </TouchableOpacity>
-              <Text style={styles.sectionDescription}>
+              <Typography>
                 Edit 123 <Text style={styles.highlight}>App.tsx</Text> to change
                 this screen and then come back to see your edits.
-              </Text>
+              </Typography>
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>See Your Changes</Text>

@@ -11,18 +11,39 @@ import {Platform} from 'react-native';
  * More on that here:
  * https://github.com/lendup/react-native-cross-platform-text
  *
- * The various styles of fonts are defined in the <Text /> component.
+ * The various styles of fonts are defined in the <Typography /> component.
  */
+const CUSTOM_FONT_BOLD = {
+  fontFamily: Platform.select({
+    ios: 'Poppins-Bold', // The font family name
+    android: 'Poppins-Bold', // The file name
+  }),
+  fontWeight: Platform.select({
+    ios: 'bold',
+    android: undefined,
+  }),
+};
+const CUSTOM_FONT_REGULAR = {
+  fontFamily: Platform.select({
+    ios: 'Poppins-Regular', // The font family name
+    android: 'Poppins-Regular', // The file name
+  }),
+  fontWeight: Platform.select({
+    ios: 'normal',
+    android: undefined,
+  }),
+};
+
 export const typography = {
   /**
    * The primary font.  Used in most places.
    */
-  primary: Platform.select({ios: 'Helvetica', android: 'normal'}),
+  primary: CUSTOM_FONT_REGULAR,
 
   /**
    * An alternate font used for perhaps titles and stuff.
    */
-  secondary: Platform.select({ios: 'Arial', android: 'sans-serif'}),
+  secondary: CUSTOM_FONT_BOLD,
 
   /**
    * Lets get fancy with a monospace font!

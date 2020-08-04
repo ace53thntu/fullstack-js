@@ -18,6 +18,7 @@ import {
   SafeAreaProvider,
   initialWindowSafeAreaInsets,
 } from 'react-native-safe-area-context';
+import {AppearanceProvider} from 'react-native-appearance';
 import * as storage from './utils/storage';
 import {
   useBackButtonHandler,
@@ -64,11 +65,13 @@ const App: Component<{}> = () => {
   // otherwise, we're ready to render the app
   return (
     <SafeAreaProvider initialSafeAreaInsets={initialWindowSafeAreaInsets}>
-      <RootNavigator
-        ref={navigationRef}
-        initialState={initialNavigationState}
-        onStateChange={onNavigationStateChange}
-      />
+      <AppearanceProvider>
+        <RootNavigator
+          ref={navigationRef}
+          initialState={initialNavigationState}
+          onStateChange={onNavigationStateChange}
+        />
+      </AppearanceProvider>
     </SafeAreaProvider>
   );
 };
