@@ -18,7 +18,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import {Typography} from '../../components';
+import {Typography, Button} from '../../components';
 
 declare const global: {HermesInternal: null | {}};
 
@@ -42,9 +42,8 @@ export const WelcomeScreen: React.FC = () => {
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>
-              <TouchableOpacity onPress={nextScreen}>
-                <Typography variant="linkNormal">Next Screen</Typography>
-              </TouchableOpacity>
+              <Button onPress={nextScreen} text="Next Screen" />
+              <Button text="Next Screen" variant="secondary" />
               <Typography>
                 Edit 123 <Text style={styles.highlight}>App.tsx</Text> to change
                 this screen and then come back to see your edits.
