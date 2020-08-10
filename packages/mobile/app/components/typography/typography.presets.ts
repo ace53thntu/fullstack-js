@@ -144,8 +144,6 @@ export const presets = {
     fontSize: 12,
     lineHeight: 18,
   } as TextStyle,
-
-  button,
 };
 
 export type TypographyPresets = keyof typeof presets;

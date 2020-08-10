@@ -18,7 +18,8 @@
       "**/mobile",
       "**/mobile/**",
       "mobile",
-      "mobile/**"
+      "mobile/**",
+      "husky"
     ]
   },
   "version": "1.0.0",
@@ -30,5 +31,6 @@
     "clean": "lerna clean --yes && rimraf node_modules",
     "dev:admin": "lerna --scope=admin run start",
     "dev:mobile:ios": "lerna --scope=mobile run ios"
-  }
+  },
+  "dependencies": {}
 }
