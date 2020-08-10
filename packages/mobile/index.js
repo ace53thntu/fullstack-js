@@ -18,5 +18,10 @@ if (__DEV__ && SHOW_STORYBOOK) {
   const {StorybookUIRoot} = require('./storybook');
   RootComponent = StorybookUIRoot;
 }
+if (__DEV__) {
+  const {Reactotron} = require('./app/services/reactotron');
+  let ReactotronDev = new Reactotron();
+  ReactotronDev.setup();
+}
 
 AppRegistry.registerComponent(appName, () => RootComponent);
