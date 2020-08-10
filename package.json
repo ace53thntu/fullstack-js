@@ -18,7 +18,8 @@
       "**/mobile",
       "**/mobile/**",
       "mobile",
-      "mobile/**"
+      "mobile/**",
+      "husky"
     ]
   },
   "version": "1.0.0",
