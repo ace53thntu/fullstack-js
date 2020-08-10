@@ -7,7 +7,6 @@ import {
   View,
   Text,
   StatusBar,
-  TouchableOpacity,
 } from 'react-native';
 
 import {
@@ -19,8 +18,6 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import {Typography, Button} from '../../components';
-
-declare const global: {HermesInternal: null | {}};
 
 export const WelcomeScreen: React.FC = () => {
   const navigation = useNavigation();
@@ -34,11 +31,6 @@ export const WelcomeScreen: React.FC = () => {
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>
