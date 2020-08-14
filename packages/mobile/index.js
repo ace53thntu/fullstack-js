@@ -13,15 +13,15 @@ const SHOW_STORYBOOK = false;
 // const SHOW_STORYBOOK = true;
 
 let RootComponent = App;
-if (__DEV__ && SHOW_STORYBOOK) {
-  // Only include Storybook if we're in dev mode
-  const {StorybookUIRoot} = require('./storybook');
-  RootComponent = StorybookUIRoot;
-}
 if (__DEV__) {
-  const {Reactotron} = require('./app/services/reactotron');
-  let ReactotronDev = new Reactotron();
-  ReactotronDev.setup();
+  if (SHOW_STORYBOOK) {
+    // Only include Storybook if we're in dev mode
+    const {StorybookUIRoot} = require('./storybook');
+    RootComponent = StorybookUIRoot;
+  } else {
+    const {Reactotron} = require('./app/services/reactotron');
+    new Reactotron().setup();
+  }
 }
 
 AppRegistry.registerComponent(appName, () => RootComponent);

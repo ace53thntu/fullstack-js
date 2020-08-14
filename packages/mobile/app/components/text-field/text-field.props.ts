@@ -7,6 +7,21 @@ export interface TextFieldProps extends TextInputProps {
   placeholder?: string;
 
   /**
+   * The label text
+   */
+  label?: string;
+
+  /**
+   * The helper text
+   */
+  helperText?: string;
+
+  /**
+   * If `true` the helper text and input will be displayed in an error state
+   */
+  error?: boolean;
+
+  /**
    * Optional container style overrides
    */
   style?: ViewStyle | ViewStyle[];
@@ -19,4 +34,14 @@ export interface TextFieldProps extends TextInputProps {
   variant?: 'default';
 
   forwardedRef?: any;
+
+  /**
+   * Left icon component
+   */
+  leftIcon?: React.ReactNode;
+
+  /**
+   * Right icon component
+   */
+  rightIcon?: React.ReactNode;
 }

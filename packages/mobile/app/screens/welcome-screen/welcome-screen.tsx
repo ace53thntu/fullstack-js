@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {
   SafeAreaView,
@@ -8,6 +8,7 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import McIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {
   Header,
@@ -17,11 +18,13 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import {Typography, Button} from '../../components';
+import {Typography, Button, TextField} from '../../components';
 
 export const WelcomeScreen: React.FC = () => {
   const navigation = useNavigation();
   const nextScreen = () => navigation.navigate('demo');
+
+  const [text, setText] = useState('');
 
   return (
     <>
@@ -36,6 +39,22 @@ export const WelcomeScreen: React.FC = () => {
               <Text style={styles.sectionTitle}>Step One</Text>
               <Button onPress={nextScreen} text="Next Screen" />
               <Button text="Next Screen" variant="secondary" />
+              <TextField
+                // error
+                // label="Username"
+                placeholder="Username"
+                helperText="Oops! Your Email Is Not Correct"
+                value={text}
+                onChangeText={(val) => setText(val)}
+                leftIcon={<McIcon name="email-outline" size={24} />}
+              />
+              <TextField
+                // error
+                placeholder="Password"
+                // helperText="Oops! Your Password Is Not Correct"
+                value={text}
+                onChangeText={(val) => setText(val)}
+              />
               <Typography>
                 Edit 123 <Text style={styles.highlight}>App.tsx</Text> to change
                 this screen and then come back to see your edits.
