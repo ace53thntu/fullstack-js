@@ -20,6 +20,8 @@ import {
 
 import {Typography, Button, TextField} from '../../components';
 
+import {translate} from '../../i18n/translate';
+
 export const WelcomeScreen: React.FC = () => {
   const navigation = useNavigation();
   const nextScreen = () => navigation.navigate('demo');
@@ -56,8 +58,9 @@ export const WelcomeScreen: React.FC = () => {
                 onChangeText={(val) => setText(val)}
               />
               <Typography>
-                Edit 123 <Text style={styles.highlight}>App.tsx</Text> to change
-                this screen and then come back to see your edits.
+                {translate('demoScreen.title')}{' '}
+                <Text style={styles.highlight}>App.tsx</Text> to change this
+                screen and then come back to see your edits.
               </Typography>
             </View>
             <View style={styles.sectionContainer}>
